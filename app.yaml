@@ -1,0 +1,29 @@
+runtime: nodejs
+env: flex
+
+# env_variables:
+#   API_KEY: YOUR_API_KEY
+#
+# manual_scaling:
+#   instances: 1
+
+#automatic_scaling:
+#  min_num_instances: 1
+#  max_num_instances: 10
+#  cool_down_period_sec: 120 # default value
+#  cpu_utilization:
+#    target_utilization: 0.5
+
+skip_files:
+- ^node_modules$
+- ^app\.yaml
+- ^README\..*
+- \.gitignore
+- ^\.git$
+- ^grunt\.js
+- ^src$
+- ^e2e$
+- \.editorconfig
+- ^karma\.config\.js
+- ^protractor\.conf\.js
+- ^tslint\.json
