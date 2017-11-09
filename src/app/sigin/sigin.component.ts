@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  MatDialog,
+} from '@angular/material';
+import { SiginDialogComponent } from '../sigin-dialog/sigin-dialog.component';
 
 @Component({
   selector: 'app-sigin',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  siginDialog() {
+    let dialogRef = this.dialog.open(SiginDialogComponent, {
+      width: '450px',
+    });
   }
 
 }

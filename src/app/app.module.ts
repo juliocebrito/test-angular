@@ -9,15 +9,20 @@ import {
   MatButtonModule,
   MatCardModule,
   MatToolbarModule,
+  MatDialogModule,
 } from '@angular/material/';
 import { LoginComponent } from './login/login.component';
 import { SiginComponent } from './sigin/sigin.component';
+import { SiginDialogComponent } from './sigin-dialog/sigin-dialog.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SiginComponent
+    SiginComponent,
+    SiginDialogComponent,
+    LoginDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,11 @@ import { SiginComponent } from './sigin/sigin.component';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
+    MatDialogModule,
+  ],
+  entryComponents: [
+    SiginDialogComponent,
+    LoginDialogComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
