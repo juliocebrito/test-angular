@@ -24,3 +24,11 @@ h2 {
   color: #FAFAFA;
   background-color: #424242;
 }
+
+.mat-card-actions {
+  margin-left: 1px;
+}
+
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 1px;
+}
