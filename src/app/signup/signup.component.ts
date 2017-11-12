@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  MatDialog,
+  MatDialogRef,
 } from '@angular/material';
-import { SignupDialogComponent } from '../signup-dialog/signup-dialog.component';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,15 +11,22 @@ import { SignupDialogComponent } from '../signup-dialog/signup-dialog.component'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  email: string;
+  password: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialogRef: MatDialogRef<SignupComponent>,
+              public authService: AuthService,
+              public router: Router,) { }
 
   ngOnInit() {
   }
 
-  signupDialog() {
-    let dialogRef = this.dialog.open(SignupDialogComponent, {
-      width: '450px',
+  signup() {
+    this.authService.signup(this.email, this.password).then(res => {
+      this.router.navigate(['']);
+      this.email = this.password = '';
+    }, error => {
+      this.email = this.password = '';
     });
   }
 

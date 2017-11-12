@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './/app-routing.module';
+
 import {
   MatFormFieldModule,
   MatInputModule,
@@ -15,25 +18,28 @@ import {
   MatToolbarModule,
   MatDialogModule,
 } from '@angular/material/';
+
+import { IndexComponent } from './index/index.component';
 import { SignupComponent } from './signup/signup.component';
-import { SignupDialogComponent } from './signup-dialog/signup-dialog.component';
 import { LoginComponent } from './login/login.component';
-import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+
+import { DashboardModule} from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    IndexComponent,
     SignupComponent,
-    SignupDialogComponent,
     LoginComponent,
-    LoginDialogComponent,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
 
     MatFormFieldModule,
     MatInputModule,
@@ -41,10 +47,12 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     MatCardModule,
     MatToolbarModule,
     MatDialogModule,
+
+    DashboardModule,
   ],
   entryComponents: [
-    SignupDialogComponent,
-    LoginDialogComponent,
+    SignupComponent,
+    LoginComponent,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

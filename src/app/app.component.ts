@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {  } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,5 @@ import {  } from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to Test Angular Flex';
+  
 }

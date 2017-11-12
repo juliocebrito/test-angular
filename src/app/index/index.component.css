@@ -1,0 +1,27 @@
+.app-content {
+  padding: 32px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.mat-card-actions {
+  margin-left: 1px;
+}
+
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 1px;
+}
+
+.mat-raised-button {
+  color: #FAFAFA;
+  background-color: #FF9800;
+}
+
+h1 {
+  color: #424242
+}
+
+h2 {
+  color: #424242
+}

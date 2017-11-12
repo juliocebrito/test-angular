@@ -5,30 +5,7 @@
   width: 100%;
 }
 
-.app-content {
-  padding: 32px;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-h1 {
-  color: #424242
-}
-
-h2 {
-  color: #424242
-}
-
 .mat-toolbar {
   color: #FAFAFA;
   background-color: #424242;
-}
-
-.mat-card-actions {
-  margin-left: 1px;
-}
-
-.mat-card>.mat-card-actions:last-child {
-  margin-bottom: 1px;
 }

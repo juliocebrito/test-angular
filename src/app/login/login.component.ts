@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  MatDialog,
+  MatDialogRef,
 } from '@angular/material';
-import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +11,22 @@ import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  email: string;
+  password: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialogRef: MatDialogRef<LoginComponent>,
+              public authService: AuthService,
+              public router: Router,) { }
 
   ngOnInit() {
   }
 
-  loginDialog() {
-    let dialogRef = this.dialog.open(LoginDialogComponent, {
-      width: '430px',
+  login() {
+    this.authService.login(this.email, this.password).then(res => {
+      this.router.navigate(['dashboard']);
+      this.email = this.password = '';
+    }, error => {
+      this.email = this.password = '';
     });
   }
 
