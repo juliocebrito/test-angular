@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {
   MatDialog,
 } from '@angular/material';
-import { LoginComponent } from '../login/login.component';
-import { SignupComponent } from '../signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @Component({
-  selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
-export class IndexComponent implements OnInit {
+export class AuthComponent implements OnInit {
   title = 'Welcome to Test Angular Flex';
   constructor(public dialog: MatDialog) { }
 

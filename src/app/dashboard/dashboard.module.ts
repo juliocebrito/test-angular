@@ -28,5 +28,6 @@ import {
     MatToolbarModule,
     MatDialogModule,
   ],
+  providers: [],
 })
 export class DashboardModule { }

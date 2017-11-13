@@ -3,7 +3,7 @@ import {
   MatDialogRef,
 } from '@angular/material';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
