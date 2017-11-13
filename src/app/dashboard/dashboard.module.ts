@@ -14,6 +14,9 @@ import {
 } from '@angular/material/';
 
 @NgModule({
+  declarations: [
+    DashboardComponent,
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -25,6 +28,5 @@ import {
     MatToolbarModule,
     MatDialogModule,
   ],
-  declarations: [DashboardComponent]
 })
 export class DashboardModule { }

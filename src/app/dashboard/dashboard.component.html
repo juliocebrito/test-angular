@@ -1,4 +1,13 @@
-<p>
-  dashboard works!
-  <button mat-button (click)="logout()">Logout</button>
-</p>
+<h2 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}! <button mat-raised-button color="" (click)="logout()">Logout</button></h2>
+
+<ul *ngIf="!loading; else loadingMsg">
+  <li *ngFor="let category of data.categories">
+    <p>{{ category.id }}</p>
+    <p>{{ category.name }}</p>
+    <p>{{ category.typeCategory }}</p>
+  </li>
+</ul>
+
+<ng-template #loadingMsg>
+  Loading your categories...
+</ng-template>

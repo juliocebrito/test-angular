@@ -10,6 +10,12 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './/app-routing.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ApolloModule, Apollo  } from 'apollo-angular';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
+
 import {
   MatFormFieldModule,
   MatInputModule,
@@ -41,6 +47,10 @@ import { DashboardModule} from './dashboard/dashboard.module';
     BrowserAnimationsModule,
     AppRoutingModule,
 
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
+
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -57,4 +67,14 @@ import { DashboardModule} from './dashboard/dashboard.module';
   providers: [AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    apollo: Apollo,
+    httpLink: HttpLink
+  ) {
+    apollo.create({
+      link: httpLink.create({ uri: 'https://test-django-flex.appspot.com/graphql' }),
+      cache: new InMemoryCache()
+    });
+  }
+}

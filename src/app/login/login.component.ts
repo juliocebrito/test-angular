@@ -15,17 +15,19 @@ export class LoginComponent implements OnInit {
   password: string;
 
   constructor(public dialogRef: MatDialogRef<LoginComponent>,
-              public authService: AuthService,
+              private authService: AuthService,
               public router: Router,) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.authService.login(this.email, this.password).then(res => {
+    this.authService.login(this.email, this.password).then((success) => {
+      console.log(success)
       this.router.navigate(['dashboard']);
       this.email = this.password = '';
-    }, error => {
+    }, (error) => {
+      console.log(error)
       this.email = this.password = '';
     });
   }

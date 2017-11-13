@@ -22,10 +22,12 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    this.authService.signup(this.email, this.password).then(res => {
+    this.authService.signup(this.email, this.password).then((success) => {
+      console.log(success)
       this.router.navigate(['']);
       this.email = this.password = '';
-    }, error => {
+    }, (error) => {
+      console.log(error)
       this.email = this.password = '';
     });
   }
