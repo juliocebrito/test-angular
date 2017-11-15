@@ -1,0 +1,7 @@
+<mat-toolbar>
+  <span>Test Angular Flex</span>
+
+  <span class="mat-toolbar-space"></span>
+
+  <span *ngIf="authService.user | async">{{ (authService.user | async)?.displayName }}<button mat-button (click)="logout()">Logout</button></span>
+</mat-toolbar>

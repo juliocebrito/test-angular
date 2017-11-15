@@ -1,13 +1,41 @@
-<h2 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}! <button mat-raised-button color="" (click)="logout()">Logout</button></h2>
+<mat-sidenav-container class="base-container">
 
-<ul *ngIf="!loading; else loadingMsg">
-  <li *ngFor="let category of data.categories">
-    <p>{{ category.id }}</p>
-    <p>{{ category.name }}</p>
-    <p>{{ category.typeCategory }}</p>
-  </li>
-</ul>
+  <mat-sidenav #sidenav class="base-sidenav">
+    <!-- <button type="button" mat-button (click)="sidenav.close()">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <button mat-mini-fab type="button" (click)="sidenav.close()"><mat-icon>menu</mat-icon></button>
+    <mat-nav-list>
+      <mat-list-item routerLink="/dashboard">Categories</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/dashboard">Subategories</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/dashboard">Products</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/dashboard">Services</mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
 
-<ng-template #loadingMsg>
-  Loading your categories...
-</ng-template>
+  </mat-sidenav>
+
+  <div class="base-sidenav-content">
+    <mat-toolbar>
+      <!-- <button mat-button type="button" (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+      <button mat-mini-fab type="button" (click)="sidenav.open()"><mat-icon>menu</mat-icon></button>
+    </mat-toolbar>
+
+    <mat-list *ngIf="!loading; else loadingMsg">
+      <mat-list-item *ngFor="let category of data.categories">
+        <p>{{ category.id }} | {{ category.name }} | {{ category.typeCategory }}</p>
+      </mat-list-item>
+    </mat-list>
+
+    <ng-template #loadingMsg >
+      <mat-spinner class="loading"></mat-spinner>
+    </ng-template>
+
+  </div>
+
+</mat-sidenav-container>

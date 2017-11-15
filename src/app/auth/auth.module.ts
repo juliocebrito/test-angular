@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 // firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 // angular material
@@ -21,12 +22,14 @@ import {
 import { AuthComponent } from './auth.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { NotAuthComponent } from './not-auth/not-auth.component';
 
 @NgModule({
   declarations: [
     AuthComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    NotAuthComponent
   ],
   imports: [
     CommonModule,
@@ -42,6 +45,7 @@ import { LoginComponent } from './login/login.component';
     // firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
   ],
   entryComponents: [
     SignupComponent,

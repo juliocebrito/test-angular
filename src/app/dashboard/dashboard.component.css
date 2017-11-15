@@ -1,0 +1,32 @@
+.base-container {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.base-sidenav-content {
+
+}
+
+.base-sidenav {
+  padding: 20px;
+}
+
+mat-sidenav {
+  width: 300px;
+}
+
+.loading {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  transform: translate(-50%, -50%);
+}
+
+.mat-mini-fab {
+  color: #FAFAFA;
+  background-color: #FF9800;
+}
