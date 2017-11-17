@@ -5,7 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 // firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
 // angular material
@@ -45,7 +45,7 @@ import { NotAuthComponent } from './not-auth/not-auth.component';
     // firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
+    AngularFirestoreModule,
   ],
   entryComponents: [
     SignupComponent,
