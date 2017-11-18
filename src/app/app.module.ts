@@ -4,18 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './/app-routing.module';
 // angular material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatDialogModule,
-} from '@angular/material/';
+import { AppMaterialModule } from './app-material.module';
 // test angular flex
+// modules
 import { AuthModule} from './auth/auth.module';
 import { DashboardModule} from './dashboard/dashboard.module';
-
+// components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -32,13 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     // angular material
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatDialogModule,
-    // test angular flex
+    AppMaterialModule,
     AuthModule,
     DashboardModule,
   ],

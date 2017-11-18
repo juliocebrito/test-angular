@@ -7,22 +7,15 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../../environments/environment';
-import { AuthService } from './auth.service';
 // angular material
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatDialogModule,
-} from '@angular/material/';
+import { AppMaterialModule } from '../app-material.module';
 // auth
 import { AuthComponent } from './auth.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { NotAuthComponent } from './not-auth/not-auth.component';
+
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -36,12 +29,7 @@ import { NotAuthComponent } from './not-auth/not-auth.component';
     AuthRoutingModule,
     FormsModule,
     // angular material
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatDialogModule,
+    AppMaterialModule,
     // firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

@@ -8,19 +8,7 @@ import { ApolloModule, Apollo  } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 // angular material
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatFormFieldModule,
-  MatInputModule,
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatDialogModule,
-  MatSidenavModule,
-  MatProgressSpinnerModule,
-  MatIconModule,
-  MatListModule,
-} from '@angular/material/';
+import { AppMaterialModule } from '../app-material.module';
 // dashboard
 import { DashboardComponent } from './dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -41,17 +29,7 @@ import { CategoriesComponent } from './categories/categories.component';
     ApolloModule,
     HttpLinkModule,
     // angular material
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatDialogModule,
-    MatSidenavModule,
-    MatProgressSpinnerModule,
-    MatIconModule,
-    MatListModule,
+    AppMaterialModule,
   ],
   providers: [],
 })

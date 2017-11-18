@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBt_hkv8e5SkbV6LQOAnRoptujzvFtQGuw",
-    authDomain: "test-angular-flex.firebaseapp.com",
-    databaseURL: "https://test-angular-flex.firebaseio.com",
-    projectId: "test-angular-flex",
-    storageBucket: "test-angular-flex.appspot.com",
-    messagingSenderId: "12102997231"
+    apiKey: "AIzaSyCBsxCet1VM1LnEjEP_crpukQxvQuL8CV0",
+    authDomain: "angular-flex.firebaseapp.com",
+    databaseURL: "https://angular-flex.firebaseio.com",
+    projectId: "angular-flex",
+    storageBucket: "angular-flex.appspot.com",
+    messagingSenderId: "480626293655"
   }
 };

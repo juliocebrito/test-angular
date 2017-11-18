@@ -2,10 +2,22 @@
 
 <mat-dialog-content>
   <mat-form-field>
+    <input matInput type="text" name="firstName" placeholder="first name" [(ngModel)]="profile.firstName" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" name="lastName" placeholder="last name" [(ngModel)]="profile.lastName" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" name="phoneNumber" placeholder="phone number" [(ngModel)]="profile.phoneNumber" required>
+  </mat-form-field>
+  <mat-form-field>
     <input matInput type="email" name="email" placeholder="Email" [(ngModel)]="email" required>
   </mat-form-field>
   <mat-form-field>
     <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="password" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="password" name="password2" placeholder="Password" required>
   </mat-form-field>
 </mat-dialog-content>
 
