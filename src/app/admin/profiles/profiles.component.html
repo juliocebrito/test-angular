@@ -1,0 +1,14 @@
+<h2>Profiles</h2>
+<mat-list *ngIf="!loading; else loadingMsg">
+  <mat-list-item *ngFor="let profile of profiles">
+    <h3>{{ profile.fullName }}</h3>
+    <mat-list-item *ngFor="let role of profile.roles">
+      <h3>{{ role?.name }}</h3>
+    </mat-list-item>
+    <button mat-icon-button type="button" [routerLink]="['/admin/profiles-update', profile.id]"><mat-icon>edit</mat-icon></button>
+  </mat-list-item>
+</mat-list>
+
+<ng-template #loadingMsg >
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>

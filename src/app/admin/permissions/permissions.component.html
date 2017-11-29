@@ -1,0 +1,18 @@
+<h2>Permissions</h2>
+<button mat-mini-fab type="button" routerLink="/admin/permissions-create">
+  <mat-icon>add</mat-icon></button>
+<mat-list *ngIf="!loading; else loadingMsg">
+  <mat-list-item *ngFor="let permission of permissions">
+    <h3>{{ permission.name }} {{ permission.model }}</h3>
+    <button mat-icon-button type="button" [routerLink]="['/admin/permissions-update', permission.id]">
+      <mat-icon>edit</mat-icon></button>
+    <button mat-icon-button type="button" [routerLink]="['/admin/permissions-delete', permission.id]">
+      <mat-icon>delete</mat-icon></button>
+  </mat-list-item>
+</mat-list>
+
+<ng-template #loadingMsg >
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>
+
+<router-outlet></router-outlet>

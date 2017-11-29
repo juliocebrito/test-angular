@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  MatDialogRef,
-} from '@angular/material';
 import { Router } from '@angular/router';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
 import { AuthService } from '../auth.service';
 import * as firebase from 'firebase/app';
-import { Profile } from '../auth.service';
+import { Profile } from '../../models/auth-models'
 
 @Component({
   selector: 'app-signup',
@@ -19,18 +16,15 @@ export class SignupComponent implements OnInit {
   password: string;
   currentUser:any;
   profile: Profile = {
-    user: '',
+    userId: '',
     firstName: '',
     lastName: '',
     fullName: '',
     phoneNumber: '',
-    role: '',
+    roles: [],
   };
 
-
-
-  constructor(public dialogRef: MatDialogRef<SignupComponent>,
-              public authService: AuthService,
+  constructor(public authService: AuthService,
               public router: Router,) { }
 
   ngOnInit() {
@@ -38,26 +32,25 @@ export class SignupComponent implements OnInit {
 
   signup() {
     this.authService.signup(this.email, this.password).then((success) => {
-      console.log(success)
       this.currentUser = firebase.auth().currentUser;
       this.currentUser.updateProfile({
         displayName: this.profile.firstName+' '+this.profile.lastName,
       })
       .then((success) => {
-        console.log(success)
-        this.profile.user = this.currentUser.uid;
+        this.profile.userId = this.currentUser.uid;
         this.profile.fullName = this.profile.firstName+' '+this.profile.lastName;
-        this.authService.addProfile(this.profile);
-        this.email = '';
-        this.password = '';
-        this.currentUser = '';
-        this.profile.user = '';
-        this.profile.firstName = '';
-        this.profile.lastName = '';
-        this.profile.fullName = '';
-        this.profile.phoneNumber = '';
-        this.profile.role = '';
-        this.router.navigate(['']);
+        this.authService.addProfile(this.profile).then((success) => {
+          this.email = '';
+          this.password = '';
+          this.currentUser = '';
+          this.profile.userId = '';
+          this.profile.firstName = '';
+          this.profile.lastName = '';
+          this.profile.fullName = '';
+          this.profile.phoneNumber = '';
+          this.router.navigate(['']);
+        }, (error) => {})
+
       })
 
     }, (error) => {

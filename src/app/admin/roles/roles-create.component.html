@@ -1,0 +1,17 @@
+<div class="form-container">
+  <h2>create role</h2>
+  <form (ngSubmit)="createRole()">
+    <mat-form-field>
+      <input matInput type="text" name="name" placeholder="name" [(ngModel)]="role.name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select name="permissions" placeholder="permissions" [(ngModel)]="role.permissions" multiple required>
+        <mat-option *ngFor="let permission of permissions" [value]="permission">
+          {{ permission.name }} {{ permission.model }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button>Create</button>
+    <button mat-button [routerLink]="['/admin/roles']">Cancel</button>
+  </form>
+</div>

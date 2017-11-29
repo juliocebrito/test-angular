@@ -1,3 +1,9 @@
-<p>
-  categories works!
-</p>
+<mat-list *ngIf="!loading; else loadingMsg">
+  <mat-list-item *ngFor="let category of data.categories">
+    <p>{{ category.id }} | {{ category.name }} | {{ category.typeCategory }}</p>
+  </mat-list-item>
+</mat-list>
+
+<ng-template #loadingMsg >
+  <mat-spinner class="loading"></mat-spinner>
+</ng-template>

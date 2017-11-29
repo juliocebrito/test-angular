@@ -1,0 +1,40 @@
+.form-container {
+	position: relative;
+	max-width: 12rem;
+	margin: 2rem auto;
+	background: $body-bg;
+	width: 100%;
+	padding: 3rem 5rem 0;
+	border-radius: 1px;
+}
+
+.loading {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  color: #424242
+}
+
+h2 {
+  color: #424242
+}
+
+h3 {
+  color: #424242
+}
+
+.mat-raised-button {
+  color: #FAFAFA;
+  background-color: #FF9800;
+}
+
+.mat-mini-fab {
+  color: #FAFAFA;
+  background-color: #FF9800;
+}

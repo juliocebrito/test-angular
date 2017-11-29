@@ -1,0 +1,13 @@
+<div class="form-container">
+  <h2>Update Permission</h2>
+  <form (ngSubmit)="updatePermission(permission)">
+    <mat-form-field>
+      <input matInput type="text" name="name" placeholder="name" [(ngModel)]="permission.name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="model" placeholder="model" [(ngModel)]="permission.model" required>
+    </mat-form-field>
+    <button mat-raised-button>Update</button>
+    <button mat-button [routerLink]="['/admin/permissions']">Cancel</button>
+  </form>
+</div>

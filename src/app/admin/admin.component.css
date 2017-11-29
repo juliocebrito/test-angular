@@ -1,0 +1,28 @@
+.base-container {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.base-sidenav-content {
+  padding: 15px
+}
+
+.base-sidenav {
+  padding: 20px;
+}
+
+mat-sidenav {
+  width: 240px;
+}
+
+.mat-mini-fab {
+  color: #FAFAFA;
+  background-color: #FF9800;
+}
+
+.mat-toolbar {
+  color: #424242;
+  background-color: #EEEEEE;
+}

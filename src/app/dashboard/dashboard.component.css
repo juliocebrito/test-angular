@@ -6,7 +6,7 @@
 }
 
 .base-sidenav-content {
-
+  padding: 15px
 }
 
 .base-sidenav {
@@ -14,7 +14,7 @@
 }
 
 mat-sidenav {
-  width: 300px;
+  width: 240px;
 }
 
 .loading {
@@ -29,4 +29,9 @@ mat-sidenav {
 .mat-mini-fab {
   color: #FAFAFA;
   background-color: #FF9800;
+}
+
+.mat-toolbar {
+  color: #424242;
+  background-color: #EEEEEE;
 }

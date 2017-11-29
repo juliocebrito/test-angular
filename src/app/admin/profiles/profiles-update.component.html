@@ -1,0 +1,36 @@
+<div class="form-container">
+  <h2>Update Profile</h2>
+  <form (ngSubmit)="updateProfile(profile)">
+    <mat-form-field>
+      <input matInput type="text" name="firstName" placeholder="firstName" [(ngModel)]="profile.firstName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="lastName" placeholder="lastName" [(ngModel)]="profile.lastName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="phoneNumber" placeholder="phoneNumber" [(ngModel)]="profile.phoneNumber" required>
+    </mat-form-field>
+    <!-- <mat-form-field>
+      <mat-select name="permissions" placeholder="permissions" [(ngModel)]="role.permissions" multiple required>
+        <mat-option *ngFor="let permission of role.permissions" [value]="permission">
+          {{ permission.name }} {{ permission.model }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <mat-list *ngIf="!loading; else loadingMsg">
+      <mat-list-item *ngFor="let role of profile.roles">
+        <h3>{{ role.name }}</h3>
+      </mat-list-item>
+    </mat-list>
+    <mat-form-field>
+      <mat-select name="roles" placeholder="roles" [(ngModel)]="role.roles" multiple required>
+        <mat-option *ngFor="let role of roles" [value]="role">
+          {{ role.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button>Update</button>
+    <button mat-button [routerLink]="['/admin/profiles']">Cancel</button>
+  </form>
+</div>

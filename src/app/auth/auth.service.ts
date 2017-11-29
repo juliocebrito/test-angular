@@ -1,19 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 // firebase
+import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection,
          AngularFirestoreDocument } from 'angularfire2/firestore';
-import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs/Observable';
-
-export interface Profile {
-  user: string;
-  firstName: string;
-  lastName: string;
-  fullName: string;
-  phoneNumber: string;
-  role: string;
-}
+// models
+import { Profile} from '../models/auth-models'
 
 @Injectable()
 export class AuthService {
@@ -21,31 +14,37 @@ export class AuthService {
   private profilesCollection: AngularFirestoreCollection<Profile>
   profiles: Observable<Profile[]>;
 
-  constructor(private af: AngularFireAuth,
+  constructor(private afa: AngularFireAuth,
               private afs: AngularFirestore,) {
-    this.user = af.authState;
+    this.user = afa.authState;
     this.profilesCollection = afs.collection<Profile>('profiles');
     this.profiles = this.profilesCollection.valueChanges();
   }
 
   signup(email: string, password: string) {
-    return this.af
+    return this.afa
       .auth
       .createUserWithEmailAndPassword(email, password)
   }
 
   addProfile(profile: Profile) {
-    return this.profilesCollection.add(profile);
+    return this.profilesCollection.add(profile)
+    // .then((docRef) => {
+    //     console.log('New document with id: ', docRef.id);
+    // })
+    // .catch((error) => {
+    //     console.error('Error adding document: ', error);
+    // });
   }
 
   login(email: string, password: string) {
-    return this.af
+    return this.afa
       .auth
       .signInWithEmailAndPassword(email, password)
   }
 
   logout() {
-    this.af
+    this.afa
       .auth
       .signOut();
   }

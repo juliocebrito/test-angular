@@ -8,6 +8,7 @@ import { AppMaterialModule } from './app-material.module';
 // test angular flex
 // modules
 import { AuthModule} from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
 import { DashboardModule} from './dashboard/dashboard.module';
 // components
 import { AppComponent } from './app.component';
@@ -27,7 +28,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     // angular material
     BrowserAnimationsModule,
     AppMaterialModule,
+    // test angular flex
+    // modules
     AuthModule,
+    AdminModule,
     DashboardModule,
   ],
   providers: [],

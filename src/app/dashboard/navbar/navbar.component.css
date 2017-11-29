@@ -1,8 +1,13 @@
 .mat-toolbar {
   color: #424242;
-  background-color: #E0E0E0#424242;
+  background-color: #E0E0E0;
 }
 
 .mat-toolbar-space {
   flex: 1 1 auto;
+}
+
+.mat-mini-fab {
+  color: #FAFAFA;
+  background-color: #FF9800;
 }

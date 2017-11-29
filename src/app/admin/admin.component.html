@@ -1,0 +1,22 @@
+<mat-sidenav-container class="base-container">
+  <mat-sidenav #sidenav mode="side" opened="true" class="base-sidenav">
+    <mat-nav-list>
+      <mat-list-item routerLink="/admin" routerLinkActive="active"><h2>Admin</h2></mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/admin/profiles" routerLinkActive="active">Profiles</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/admin/roles" routerLinkActive="active">Roles</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/admin/permissions" routerLinkActive="active">Permissions</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="/dashboard" routerLinkActive="active">Dashboard</mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar>
+    <button mat-mini-fab type="button" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+  </mat-toolbar>
+  <div class="base-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

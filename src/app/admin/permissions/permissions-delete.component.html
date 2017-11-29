@@ -1,0 +1,5 @@
+<p>
+  Are you sure to delete this {{ permission?.name}} {{ permission?.model}}?
+</p>
+<button (click)="deletePermission(permission)" mat-raised-button type="button" name="button">Delete</button>
+<button mat-button [routerLink]="['/admin/permissions']">Cancel</button>

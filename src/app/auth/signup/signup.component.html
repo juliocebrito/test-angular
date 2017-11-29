@@ -1,27 +1,25 @@
-<h2 mat-dialog-title>Sigin</h2>
-
-<mat-dialog-content>
-  <mat-form-field>
-    <input matInput type="text" name="firstName" placeholder="first name" [(ngModel)]="profile.firstName" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput type="text" name="lastName" placeholder="last name" [(ngModel)]="profile.lastName" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput type="text" name="phoneNumber" placeholder="phone number" [(ngModel)]="profile.phoneNumber" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput type="email" name="email" placeholder="Email" [(ngModel)]="email" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="password" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput type="password" name="password2" placeholder="Password" required>
-  </mat-form-field>
-</mat-dialog-content>
-
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-  <button mat-button [mat-dialog-close]="true" (click)="signup()">Signup</button>
-</mat-dialog-actions>
+<div class="form-container">
+  <form (ngSubmit)="signup()">
+    <h2 mat-dialog-title>Signup</h2>
+    <mat-form-field>
+      <input matInput type="text" name="firstName" placeholder="first name" [(ngModel)]="profile.firstName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="lastName" placeholder="last name" [(ngModel)]="profile.lastName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="phoneNumber" placeholder="phone number" [(ngModel)]="profile.phoneNumber" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="password" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" name="password2" placeholder="Password" required>
+    </mat-form-field>
+    <button mat-button>Signup</button>
+    <a routerLink="/login" routerLinkActive="true">or login</a>
+  </form>
+</div>

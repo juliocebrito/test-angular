@@ -11,6 +11,10 @@ import {
   MatProgressSpinnerModule,
   MatIconModule,
   MatListModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatSelectModule,
 } from '@angular/material/';
 
 @NgModule({
@@ -26,6 +30,10 @@ import {
     MatProgressSpinnerModule,
     MatIconModule,
     MatListModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatSelectModule,
   ],
   exports: [
     CommonModule,
@@ -39,6 +47,10 @@ import {
     MatProgressSpinnerModule,
     MatIconModule,
     MatListModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatSelectModule,
   ],
   declarations: []
 })

@@ -1,0 +1,17 @@
+<mat-sidenav #sidenav class="base-sidenav">
+  <!-- <button type="button" mat-button (click)="sidenav.close()">
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <button mat-mini-fab type="button" (click)="sidenav.close()"><mat-icon>menu</mat-icon></button>
+  <mat-nav-list>
+    <mat-list-item routerLink="/dashboard/categories" routerLinkActive="active">Categories</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item routerLink="/dashboard/subcategories" routerLinkActive="active">Subategories</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item routerLink="/dashboard/products" routerLinkActive="active">Products</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item routerLink="/dashboard/services" routerLinkActive="active">Services</mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-nav-list>
+
+</mat-sidenav>

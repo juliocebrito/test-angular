@@ -1,0 +1,5 @@
+<p>
+  Are you sure to delete this {{ role?.name}}?
+</p>
+<button (click)="deleteRole(role)" mat-raised-button type="button" name="button">Delete</button>
+<button mat-button [routerLink]="['/admin/roles']">Cancel</button>

@@ -1,0 +1,30 @@
+<div class="form-container">
+  <h2>Update Role</h2>
+  <form (ngSubmit)="updateRole(role)">
+    <mat-form-field>
+      <input matInput type="text" name="name" placeholder="name" [(ngModel)]="role.name" required>
+    </mat-form-field>
+    <!-- <mat-form-field>
+      <mat-select name="permissions" placeholder="permissions" [(ngModel)]="role.permissions" multiple required>
+        <mat-option *ngFor="let permission of role.permissions" [value]="permission">
+          {{ permission.name }} {{ permission.model }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <mat-list *ngIf="!loading; else loadingMsg">
+      <mat-list-item *ngFor="let permission of role.permissions">
+        <h3>{{ permission.name }} {{ permission.model }}</h3>
+      </mat-list-item>
+    </mat-list>
+    <mat-form-field>
+      <mat-select name="permissions" placeholder="permissions" [(ngModel)]="role.permissions" multiple required>
+        <mat-option *ngFor="let permission of permissions" [value]="permission">
+          {{ permission.name }} {{ permission.model }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button>Update</button>
+    <button mat-button [routerLink]="['/admin/roles']">Cancel</button>
+  </form>
+</div>
